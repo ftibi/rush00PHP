@@ -16,7 +16,7 @@ if ($_POST['login'] && $_POST['passwd'])
 	{
 		header("refresh:2 ;url=index.php");
 		echo ("Compte cree avec succes\n");
-		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']));
+		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']), "admin" => 0, "panier" => []);
 		$data_file = serialize($data_file);
 		file_put_contents($filename, $data_file);
 	}

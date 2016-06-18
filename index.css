@@ -45,3 +45,8 @@ ul li a.menu-cat
 	border:2px solid;
 	border-color:#DCDCDC #696969 #696969 #DCDCDC;
 }
+
+li.usr
+{
+	list-style-type: none;
+}
