@@ -9,16 +9,6 @@ include 'user_info.php';
 
 session_start();
 install();
-// echo "page daccueil";
-
-// 	echo "
-// <p>logged in as $_SESSION[logged_on_user]</p>
-// <p><a href=logout.php> Cliquez ici pour vous deconnecter</a></p>
-// <p><a href=modif.html> Cliquez ici pour modifier votre compte</a></p>
-// <p><a href=shop.php> Acceder au magasin</a></p>
-// ";
-
-// echo "fin";
 ?>
 
 
