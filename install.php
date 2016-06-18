@@ -1,3 +1,8 @@
+<p>
+
+</p>
+
+
 <?php
 
 echo "initialisation du site";
