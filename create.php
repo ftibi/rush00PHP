@@ -3,25 +3,28 @@
 if ($_POST['login'] && $_POST['passwd'])
 {
 
-	$finename = "./private/userbd";
-
+	$filename = "./private/userdb";
+	$data_file = file_get_contents($filename);
 	$data_file = unserialize($data_file);
 
 	if ($data_file[$_POST['login']])
-		echo ("ERROR\n");
+	{
+		header("refresh:2 ;url=index.php");
+		echo ("Login deja utilise\n");
+	}
 	else
 	{
-		header("refresh: 2;url=index.php");
+		header("refresh:2 ;url=index.php");
 		echo ("Compte cree avec succes\n");
 		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']));
 		$data_file = serialize($data_file);
-		file_put_contents($finename, $data_file);
+		file_put_contents($filename, $data_file);
 	}
 }
 else
 {
-	// header("Location: index.html");
-	echo ("ERROR\n");
+	header("refresh:2 ;url=index.php");
+	echo ("ERROR login ou mdp manquant\n");
 }
 exit();
 ?>
