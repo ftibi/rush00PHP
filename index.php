@@ -23,6 +23,7 @@ echo "fin";
 
 <html>
 <head>
+	<title>Awesome shop</title>
 	<link rel="stylesheet" href="index.css">
 </head>
 <div>

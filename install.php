@@ -14,7 +14,8 @@ function install()
 	// var_dump($userinit);
 
 	echo"<br />shop init<br />";
-	$shopinit = array("Tshirt" => array("name" => "Tshirt", "price" => 20, "quantity" => 10,"img" => "./img/tshirt.jpg", "tag" => "vetements"));
+	$shopinit = array("tshirt" => array("name" => "tshirt", "price" => 20, "quantity" => 10,"img" => "./img/tshirt.jpg", "tag" => "vetements"),
+						"montre" => array("name" => "montre", "price" => 50, "quantity" => 10,"img" => "./img/montre.jpg", "tag" => "accessoires"));
 	// var_dump($shopinit);
 
 	if (!file_exists("./private"))

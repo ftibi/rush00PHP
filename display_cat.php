@@ -10,7 +10,9 @@ function display_cat()
 	{
 		echo "
 <p>$elem[name] : $elem[price]$</p>
-<img class=galery_img src=$elem[img] />";
+<img class=galery_img src=$elem[img] />
+
+";
 	}
 }
 
