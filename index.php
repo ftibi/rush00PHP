@@ -1,6 +1,7 @@
 <?php
 
 include 'install.php';
+include 'auth.php';
 session_start();
 
 install();
@@ -9,7 +10,6 @@ if (!auth($_POST['login'], $_POST['passwd']))
 	readfile("login.html");
 else
 	echo" ";
-readfile("install.php");
 
 echo "salut";
 ?>
