@@ -5,7 +5,8 @@ echo "initialisation du site";
 $userbd = "./private/userbd";
 $shopbd = "./private/shopbd";
 
-$shopinit = array()
+$userinit = array();
+$shopinit = array();
 
 if (!file_exists("./private"))
 	mkdir("./private", 0777, true);
