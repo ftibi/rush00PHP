@@ -16,7 +16,7 @@ function nbarticle()
 	{
 	foreach($_SESSION[no_user][panier] as $key => $value)
 	{
-		$cpt += $_SESSION[no_user][panier][$key][quantity];
+		$cpt +=$_SESSION[no_user][panier][$key][quantity];
 	}
 	return $cpt;
 }

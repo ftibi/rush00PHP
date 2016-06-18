@@ -20,7 +20,8 @@ else
 <p>logged in as $_SESSION[logged_on_user]</p>
 <a href=logout.php> Cliquez ici pour vous deconnecter</a>
 ";
-echo	"____LOG____".$_SESSION[logged_on_user]."FIN";
+echo	"____NO_USER____";
+print_r($_SESSION[no_user]);
 	?>
 
 	<html>
