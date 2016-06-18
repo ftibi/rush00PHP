@@ -1,0 +1,14 @@
+/*#panier*/
+div
+{
+	background-color: rgb(80,80,80);
+
+  border-radius: 10px;
+  box-shadow: 12px 12px 15px black;
+}
+
+#tshirt
+{
+	width: 80px;
+
+}
