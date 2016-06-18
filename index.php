@@ -6,10 +6,10 @@ session_start();
 
 install();
 echo "page daccueil";
-if (!auth($_POST['login'], $_POST['passwd']))
+if (!$_SESSION['logged_on_user'])
 	readfile("login.html");
 else
-	echo" ";
+	echo "logged in as $_SESSION[logged_on_user]";
 
-echo "salut";
+echo "fin";
 ?>
