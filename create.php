@@ -14,7 +14,7 @@ if ($_POST['login'] && $_POST['passwd'])
 	else
 	{
 	//	print_r($data_file);
-		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']));
+		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']), "admin" => 0, "panier" => array());
 	//	print_r($data_file);
 		$data_file = serialize($data_file);
 		file_put_contents($finename, $data_file);
