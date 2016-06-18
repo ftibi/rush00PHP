@@ -1,17 +1,19 @@
 <?php
 
-include 'admin_adduser.php';
 include 'admin_deluser.php';
 
 $filename = "./private/userdb";
 $data = file_get_contents($filename);
-$data =unserialize($data);
+$data = unserialize($data);
 
-if ($_POST[login])
-	echo "efface $_POST[submit]<br />";
-
-if ($_POST[newlogin] && $_POST[newpasswd])
-	admin_adduser($_POST[newlogin], $_POST[newpasswd], 0);
+foreach ($_POST as $key => $value)
+{
+	if ($value == "del")
+	{
+		admin_deluser($key);
+		header("location: admin_panel.php");
+	}
+}
 
 ?>
 
@@ -29,17 +31,17 @@ if ($_POST[newlogin] && $_POST[newpasswd])
 
 <?php foreach ($data as $login)
 {
-	echo "<li class=usr><input type=checkbox >$login[login]</li>";
+	echo "<li class=usr><input type=checkbox name=$login[login] value=del>$login[login]</li>";
 } ?>
 	</ul>
-<input type=submit name=del value=effacer />
+<input type=submit name=del_array/>
 </form>
 
 
 <h3> Ajout d'utilisateur </h3>
-<form action=admin_panel.php method=post>
-	<p>Login: <input type="text" name="newlogin"><br /></p>
-	<p>Mot de passe:<input type="text" name="newpasswd"><br /></p>
+<form action=create.php method=post>
+	<p>Login: <input type="text" name="login"><br /></p>
+	<p>Mot de passe:<input type="text" name="passwd"><br /></p>
 <input type=submit name=submit value=ajouter />
 </form>
 
