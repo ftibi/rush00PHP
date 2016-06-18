@@ -1,11 +1,15 @@
 <?php
 
+include 'install.php';
+session_start();
+
+install();
 echo "page daccueil";
-if (!auth())
+if (!auth($_POST['login'], $_POST['passwd']))
 	readfile("login.html");
 else
 	echo" ";
 readfile("install.php");
 
-echo "  echo'salut'; ";
+echo "salut";
 ?>
