@@ -1,10 +1,10 @@
 <?php
 if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 {
-	if (!file_exists("../private"))
-		mkdir("../private", 0777, true);
+	if (!file_exists("./private"))
+		mkdir("./private", 0777, true);
 	$data_file = "";
-	$finename = "../private/passwd";
+	$finename = "./private/passwd";
 	if (file_exists($finename))
 		$data_file = file_get_contents($finename, true);
 	else
@@ -17,7 +17,6 @@ if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 	}
 	else
 	{
-		header('Location:./index.html');
 		echo ("OK\n");
 		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['newpw']));
 		$data_file = serialize($data_file);
