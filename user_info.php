@@ -11,7 +11,7 @@ function user_info()
 	{
 		echo "
 		<div>
-		<p>$_SESSION[logged_on_user]</p>
+		<p>Connecte en tant que: $_SESSION[logged_on_user]</p>
 
 		<p><a href=modif.php> Cliquez ici pour modifier votre compte</a></p>
 		<p><a href=logout.php> Cliquez ici pour vous deconnecter</a></p>
@@ -21,7 +21,7 @@ function user_info()
 		";
 		if (is_admin($_SESSION['logged_on_user']))
 		{
-			echo '<a href="modif.php">Acceder au panneau d\'administration</a>';
+			echo '<p><a href="admin_panel.php">Acceder au panneau d\'administration</a></p>';
 		}
 	}
 }

@@ -3,6 +3,7 @@
 include 'install.php';
 include 'auth.php';
 include 'display_cat.php';
+include 'display_articles.php';
 include 'user_info.php';
 
 session_start();
@@ -25,10 +26,13 @@ install();
 	<title>Awesome shop</title>
 	<link rel="stylesheet" href="index.css">
 </head>
-<div>
+<div class=part>
 	<?php user_info(); ?>
 </div>
-<div>
+<div class=part>
+	<?php display_articles(); ?>
+</div>
+<div class=part>
 	<?php display_cat(); ?>
 </div>
 

@@ -1,11 +1,11 @@
-div
+div.part
 {
 	background-color: grey;
  	border-radius: 10px;
 	box-shadow: 12px 12px 15px black;
 }
 ​
-#tshirt
+.article
 {
 	width: 80px;
 }

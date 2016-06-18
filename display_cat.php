@@ -6,11 +6,12 @@ function display_cat()
 	$data = file_get_contents($filename);
 	$data = unserialize($data);
 	// print_r($data);
-	foreach ($data as $elem)
+	$categories = [];
+	foreach ($categories as $elem)
 	{
 		echo "
-<p>$elem[name] : $elem[price]$</p>
-<img class=galery_img src=$elem[img] />
+
+
 
 ";
 	}
