@@ -1,7 +1,7 @@
 <?php
 function auth($login, $passwd)
 {
-	$finename = "./private/userbd";
+	$finename = "./private/userdb";
 	if (file_exists($finename))
 		$data_file = file_get_contents($finename, true);
 	else
