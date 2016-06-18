@@ -8,9 +8,9 @@ if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 		mkdir("../private", 0777, true);
 
 	$data_file = "";
-	$finename = "../private/passwd";
-	if (file_exists($finename))
-		$data_file = file_get_contents($finename, true);
+	$filename = "../private/userdb";
+	if (file_exists($filename))
+		$data_file = file_get_contents($filename, true);
 	else
 		$data_file = "";
 	$data_file = unserialize($data_file);
@@ -18,7 +18,7 @@ if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 
 	if (!$data_file[$_POST['login']] || $data_file[$_POST['login']]['passwd'] !== hash("whirlpool",$_POST['oldpw']))
 	{
-			echo ("ERROR\n");
+			echo ("ERROR1\n");
 			exit();
 	}
 	else
@@ -27,11 +27,11 @@ if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 		echo ("OK\n");
 		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['newpw']));
 		$data_file = serialize($data_file);
-		file_put_contents($finename, $data_file);
+		file_put_contents($filename, $data_file);
 	}
 
 }
 else
-	echo ("ERROR\n");
+	echo ("ERROR2\n");
 exit();
 ?>
