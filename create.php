@@ -3,7 +3,7 @@
 if ($_POST['login'] && $_POST['passwd'])
 {
 
-	$finename = "../private/userbd";
+	$finename = "./private/userbd";
 
 	$data_file = unserialize($data_file);
 
@@ -11,8 +11,8 @@ if ($_POST['login'] && $_POST['passwd'])
 		echo ("ERROR\n");
 	else
 	{
-		header("Location: index.php");
-		echo ("OK\n");
+		header("refresh: 2;url=index.php");
+		echo ("Compte cree avec succes\n");
 		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['passwd']));
 		$data_file = serialize($data_file);
 		file_put_contents($finename, $data_file);
