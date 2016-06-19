@@ -3,7 +3,6 @@
 include 'display_panier.php';
 include 'nbarticle.php';
 include 'total_amount.php';
-include 'unserializedb.php';
 include 'install.php';
 include 'auth.php';
 include 'display_cat.php';

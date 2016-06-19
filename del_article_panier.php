@@ -1,5 +1,6 @@
 <?php
 include 'get_usr_data.php';
+include 'put_usr_data.php';
 
 function del_article_panier($login, $article)
 {

@@ -7,7 +7,7 @@ function install()
 	$shopdb = "./private/shopdb";
 
 	// echo"<br />user init<br />";
-	$userinit = array("tibo" => array("login" => "tibo", "passwd" => hash("whirlpool", "moi"), "admin" => 1, "panier" => array("montre" => array("name" => "montre", "price" => 50, "quantity" => 1,"img" => "./img/montre.jpg", "tag" => array("accessoires", "bijoux"))),
+	$userinit = array("tibo" => array("login" => "tibo", "passwd" => hash("whirlpool", "moi"), "admin" => 1, "panier" => array("montre" => array("name" => "montre", "price" => 50, "quantity" => 1,"img" => "./img/montre.jpg", "tag" => array("accessoires", "bijoux")))),
 					"david" => array("login" => "david", "passwd" => hash("whirlpool", "moi"), "admin" => 1, "panier" => array()),
 					"toto" => array("login" => "toto", "passwd" => hash("whirlpool", "moi"), "admin" => 0, "panier" => array())));
 	// var_dump($userinit);
