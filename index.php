@@ -11,7 +11,6 @@ session_start();
 install();
 if (!$_SESSION[logged_on_user])
 	$_SESSION[logged_on_user] = 'default';
-
 ?>
 <html>
 <head>
