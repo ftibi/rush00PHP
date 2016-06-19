@@ -7,13 +7,13 @@ function display_articles()
 	// print_r($data);
 	foreach ($data as $elem)
 	{
-		echo "
+		echo "<div class=onearticle>
+<img class=galery_img src=$elem[img] />
 <form action=add_article.php method=POST >
 <p>$elem[name] : $elem[price]$</p>
-<img class=galery_img src=$elem[img] />
-<input type=submit name=article value=$elem[name]>
+ajouter<br/><input type=submit name=article value=$elem[name]><br/>au panier
 </form>
-
+</div>
 ";
 	}
 }
