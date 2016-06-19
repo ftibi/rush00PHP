@@ -3,9 +3,9 @@
 function get_shop_data()
 {
 	$filename = "./private/shopdb";
-	$data_file = file_get_contents($filename);
-	$data_file = unserialize($data_file);
-	return ($data_file);
+	$data_shop = file_get_contents($filename);
+	$data_shop = unserialize($data_shop);
+	return ($data_shop);
 }
 
 function put_shop_data($data)
