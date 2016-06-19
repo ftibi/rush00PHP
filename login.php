@@ -11,8 +11,11 @@ if ($_POST['login'] && $_POST['passwd'])
 	if (auth($_POST['login'], $_POST['passwd']))
 	{
 		$_SESSION['logged_on_user'] = $_POST['login'];
-		fusion_panier();
-		header('Location: http://google.com');
+		header('refresh:2;url=index.php');
+		echo "
+<p>Connecte avec succes</p>
+<p>Redirection vers la page principale</p>
+";
 	}
 	else
 		echo "Login/user invalide";
