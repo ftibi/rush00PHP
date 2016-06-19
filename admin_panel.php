@@ -3,10 +3,13 @@
 include 'admin_deluser.php';
 include 'admin_adduser.php';
 include 'display_orders.php';
+include 'get_shop_data.php';
+include 'del_article_admin.php';
 
 $filename = "./private/userdb";
 $data = file_get_contents($filename);
 $data = unserialize($data);
+$shopdata = get_shop_data();
 
 foreach ($_POST as $key => $value)
 {
@@ -15,10 +18,22 @@ foreach ($_POST as $key => $value)
 		admin_deluser($key);
 		header("location: admin_panel.php");
 	}
+	if ($value = "del_item")
+	{
+		del_article_admin($key);
+		header("location: admin_panel.php");
+	}
 }
 if ($_POST[login] && $_POST[passwd])
 {
 	admin_adduser($_POST[login], $_POST[passwd]);
+	header("location: admin_panel.php");
+}
+// print_r($shopdata);
+	// print_r($_POST);
+if ($_POST[name] && $_POST[price] && $_POST[img] &&$_POST[tag])
+{
+	add_article_admin($_POST[name], $_POST[price], $_POST[img], $_POST[tag]);
 	header("location: admin_panel.php");
 }
 
@@ -50,6 +65,27 @@ if ($_POST[login] && $_POST[passwd])
 <form action=admin_panel.php method=post>
 	<p>Login: <input type="text" name="login"><br /></p>
 	<p>Mot de passe:<input type="text" name="passwd"><br /></p>
+<input type=submit name=submit value=ajouter />
+</form>
+
+
+<h3> Effacer un Article </h3>
+<form action=admin_panel.php method=post>
+	<ul>
+<?php foreach ($shopdata as $item)
+{
+	echo "<li class=usr><input type=checkbox name=$item[name] value=del_item>$item[name]</li>";
+} ?>
+	</ul>
+<input type=submit name=del_array value=effacer />
+</form>
+
+<h3> Ajouter un Article </h3>
+<form action=admin_panel.php method=post>
+	<p>Nom: <input type="text" name="name"></p>
+	<p>Prix:<input type="text" name="price"></p>
+	<p>Adresse de l'image:<input type="text" name="img"></p>
+	<p>Tags:<input type="text" name="tag"></p>
 <input type=submit name=submit value=ajouter />
 </form>
 
