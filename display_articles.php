@@ -18,24 +18,3 @@ function display_articles()
 	}
 }
 ?>
-
-<!--
-
-
-<div class="list_article">
-<div id="article_tshirt">
-<form action="add_article.php" method="POST" >
-<img id="tshirt" alt="tshiry" title="tshirt" src="img/tshirt.jpg">
-<input type="submit" name="article" value="tshirt">
-</form>
-
-<div id="article_tshirt">
-<form action="add_article.php" method="POST" >
-<img id="tshirt" alt="tshiry" title="tshirt" src="img/tshirt.jpg">
-<input type="submit" name="name" value="OK">
-</form>
-
-
-</div>
-
-</div> -->

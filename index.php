@@ -1,5 +1,4 @@
 <?php
-
 include 'display_panier.php';
 include 'nbarticle.php';
 include 'total_amount.php';
@@ -8,8 +7,6 @@ include 'auth.php';
 include 'display_cat.php';
 include 'display_articles.php';
 include 'user_info.php';
-// include 'panier.php';
-
 session_start();
 install();
 if (!$_SESSION[logged_on_user])
