@@ -31,5 +31,5 @@ else
 //print_r($data_file);
 $data_file = serialize($data_file);
 file_put_contents("./private/userdb",$data_file );
-
+header("location: index.php");
 ?>
