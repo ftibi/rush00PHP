@@ -17,24 +17,31 @@ function display_cat()
 			foreach ($data as $elem)
 			{
 				print_r($elem[tag]);
-				if (array_search("bijoux", $elem[tag]) != FALSE)
+				if (array_search("vetements", $elem[tag]) !== FALSE)
 						echo "
+						<form action=add_article.php method=POST >
 						<p>$elem[name] : $elem[price]$</p>
 						<img class=galery_img src=$elem[img] />
-						<input type=submit name=article value=tshirt>
+						<input type=submit name=article value=$elem[name]>
+						</form>
 						";
 
 			}
-	echo"<p>accessoires<p>";
 
+	echo"<p>accessoires<p>";
 	foreach ($data as $elem)
 	{
-		if ($elem[tag] == 'accessoires')
-		echo "
-<p>$elem[name] : $elem[price]$</p>
-<img class=galery_img src=$elem[img] />
-<input type=submit name=article value=montre>
-";
+		print_r($elem[tag]);
+		if (array_search("bijoux", $elem[tag]) !== FALSE)
+				echo "
+				<form action=add_article.php method=POST >
+				<p>$elem[name] : $elem[price]$</p>
+				<img class=galery_img src=$elem[img] />
+				<input type=submit name=article value=$elem[name]>
+				</form>
+				";
+
+
 	}
 }
 

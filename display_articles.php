@@ -11,7 +11,7 @@ function display_articles()
 <form action=add_article.php method=POST >
 <p>$elem[name] : $elem[price]$</p>
 <img class=galery_img src=$elem[img] />
-<input type=submit name=article value=tshirt>
+<input type=submit name=article value=$elem[name]>
 </form>
 
 ";
