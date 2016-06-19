@@ -11,7 +11,7 @@ if ($_POST['login'] && $_POST['passwd'])
 	if (auth($_POST['login'], $_POST['passwd']))
 	{
 		$_SESSION['logged_on_user'] = $_POST['login'];
-	//	fusion_panier();
+		fusion_panier();
 		header('refresh:1;url=index.php');
 		echo "
 <p>Connecte avec succes</p>
