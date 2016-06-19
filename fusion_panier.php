@@ -8,7 +8,7 @@ function fusion_panier()
 		{
 			 foreach($_SESSION[def][panier] as $key => $value)
 			 {
-			 	$usr_file[$_SESSION[logged_on_user]][panier][$key][quantity] += $_SESSION[def][panier][$key][quantity];
+			 	$user_file[$_SESSION[logged_on_user]][panier][$key][quantity] += $_SESSION[def][panier][$key][quantity];
 			 }
 		}
 	$user_file = serialize($user_file);
