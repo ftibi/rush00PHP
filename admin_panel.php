@@ -2,6 +2,7 @@
 
 include 'admin_deluser.php';
 include 'admin_adduser.php';
+include 'is_admin.php';
 include 'display_orders.php';
 include 'get_shop_data.php';
 include 'del_article_admin.php';
@@ -15,8 +16,9 @@ $filenameshop = "./private/shopdb";
 $shopdata = file_get_contents($filenameshop);
 $shopdata = unserialize($shopdata);
 
-// $shopdata = get_shop_data();
-// print_r($shopdata);
+session_start();
+if (!is_admin($_SESSION[logged_on_user]))
+	header("location: index.php");
 
 foreach ($_POST as $key => $value)
 {

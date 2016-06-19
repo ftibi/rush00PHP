@@ -19,7 +19,7 @@ if (!$_SESSION[logged_on_user])
 ?>
 <html>
 <head>
-	<title>Awesome shop</title>
+	<title>Such a random shop</title>
 	<link rel="stylesheet" href="index.css">
 	<meta charset="UTF-8">
 </head>

@@ -3,6 +3,8 @@
 include 'del_article_panier.php';
 
 session_start();
+if ($_SESSION[logged_on_user] === "default")
+	header('location: index.php');
 $data = get_usr_data();
 $panier = $data[$_SESSION[logged_on_user]][panier];
 // print_r($panier);
