@@ -5,11 +5,21 @@ include 'admin_adduser.php';
 include 'display_orders.php';
 include 'get_shop_data.php';
 include 'del_article_admin.php';
+include 'add_article_admin.php';
 
 $filename = "./private/userdb";
 $data = file_get_contents($filename);
 $data = unserialize($data);
-$shopdata = get_shop_data();
+
+$filenameshop = "./private/shopdb";
+$shopdata = file_get_contents($filenameshop);
+$shopdata = unserialize($shopdata);
+
+
+
+
+// $shopdata = get_shop_data();
+print_r($shopdata);
 
 foreach ($_POST as $key => $value)
 {
@@ -24,14 +34,13 @@ foreach ($_POST as $key => $value)
 		header("location: admin_panel.php");
 	}
 }
+
 if ($_POST[login] && $_POST[passwd])
 {
 	admin_adduser($_POST[login], $_POST[passwd]);
 	header("location: admin_panel.php");
 }
-// print_r($shopdata);
-	// print_r($_POST);
-if ($_POST[name] && $_POST[price] && $_POST[img] &&$_POST[tag])
+if ($_POST[name] && $_POST[price] && $_POST[img] && $_POST[tag])
 {
 	add_article_admin($_POST[name], $_POST[price], $_POST[img], $_POST[tag]);
 	header("location: admin_panel.php");
@@ -72,7 +81,8 @@ if ($_POST[name] && $_POST[price] && $_POST[img] &&$_POST[tag])
 <h3> Effacer un Article </h3>
 <form action=admin_panel.php method=post>
 	<ul>
-<?php foreach ($shopdata as $item)
+<?php
+foreach ($shopdata as $item => $value)
 {
 	echo "<li class=usr><input type=checkbox name=$item[name] value=del_item>$item[name]</li>";
 } ?>

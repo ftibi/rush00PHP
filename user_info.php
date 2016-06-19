@@ -4,7 +4,7 @@ include 'is_admin.php';
 function user_info()
 {
 	// session_start();
-	if (!$_SESSION['logged_on_user'])
+	if ($_SESSION['logged_on_user'] === 'default')
 		readfile("login.html");
 	else
 	{
