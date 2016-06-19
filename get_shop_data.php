@@ -8,4 +8,10 @@ function get_shop_data()
 	return ($data_file);
 }
 
+function put_shop_data($data)
+{
+	$filename = "./private/shopdb";
+	$data = serialize($data);
+	file_put_contents($filename, $data);
+}
 ?>
