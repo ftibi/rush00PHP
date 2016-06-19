@@ -6,7 +6,7 @@ function del_article_admin($item)
 	// {
 	// 	if ($val == $item)
 	// }
-	// unset($shopdata[$item]);
+	unset($shopdata[$item]);
 	put_shop_data($shopdata);
 }
 

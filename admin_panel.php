@@ -8,18 +8,15 @@ include 'del_article_admin.php';
 include 'add_article_admin.php';
 
 $filename = "./private/userdb";
-$data = file_get_contents($filename);
-$data = unserialize($data);
+$datausr = file_get_contents($filename);
+$datausr = unserialize($datausr);
 
 $filenameshop = "./private/shopdb";
 $shopdata = file_get_contents($filenameshop);
 $shopdata = unserialize($shopdata);
 
-
-
-
 // $shopdata = get_shop_data();
-print_r($shopdata);
+// print_r($shopdata);
 
 foreach ($_POST as $key => $value)
 {
@@ -60,8 +57,7 @@ if ($_POST[name] && $_POST[price] && $_POST[img] && $_POST[tag])
 <h3> Effacer utilisateurs </h3>
 <form action=admin_panel.php method=post>
 	<ul>
-
-<?php foreach ($data as $login)
+<?php foreach ($datausr as $login)
 {
 	echo "<li class=usr><input type=checkbox name=$login[login] value=del>$login[login]</li>";
 } ?>
@@ -82,7 +78,7 @@ if ($_POST[name] && $_POST[price] && $_POST[img] && $_POST[tag])
 <form action=admin_panel.php method=post>
 	<ul>
 <?php
-foreach ($shopdata as $item => $value)
+foreach ($shopdata as $item)
 {
 	echo "<li class=usr><input type=checkbox name=$item[name] value=del_item>$item[name]</li>";
 } ?>
