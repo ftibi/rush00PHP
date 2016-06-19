@@ -7,31 +7,29 @@ function display_cat()
 	$data = unserialize($data);
 	$category = array("vetements", "accessoires", "bijoux");
 	// print_r($data);
-	echo "<h3>Boutique</h3>";
-	//
-	// <form action='login.php' method='post'>
-	// 	<input type='submit' name='name' value='OK' /></p>
-	// </form>
-
+	echo "<h2>Boutique</h2>
+		<h3>category:</h3>";
+echo "<div class=top>";
 foreach ($category as $type)
 {
-	echo"<form action=affiche_cat.php method=POST>
-	<p>$type<p>
+	echo"<form class=formcat action=affiche_cat.php method=POST>
 	<input type=submit name=category value=$type>
 </form>";
 }
+echo "</div>";
 
 			if ($_SESSION[cat])
 			{
 			foreach ($data as $elem)
 			{
 				if (array_search($_SESSION[cat], $elem[tag]) !== FALSE)
-						echo "
-						<form action=add_article.php method=POST >
+						echo "<div class=onearticle>
 						<p>$elem[name] : $elem[price]$</p>
 						<img class=galery_img src=$elem[img] />
-						<input type=submit name=article value=$elem[name]>
-						</form>
+						<form action=add_article.php method=POST >
+						ajouter<br/>
+						<input type=submit name=article value=$elem[name]><br/>au panier
+						</form></div>
 						";
 			}
 		}

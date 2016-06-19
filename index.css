@@ -19,6 +19,14 @@ img
 		width: 80px;		//tmp
 }
 
+.formcat,.onearticle
+{
+	/*margin: auto;*/
+  /*vertical-align: top;*/
+  display: inline-block;
+	box-shadow: none;
+}
+
 .category
 {
 	float:left;
