@@ -14,15 +14,12 @@ foreach ($_POST as $key => $value)
 {
 	if ($value == "del")
 	{
-		// echo "delete $key<br />";
  		del_article_panier($_SESSION[logged_on_user], $key);
 		header('location: page_panier.php');
 	}
 }
 
 ?>
-
-
 <html>
 <header>
 	<title>Panier</title>

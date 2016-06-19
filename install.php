@@ -26,10 +26,10 @@ function install()
 					"trotinette" => array("name" => "trotinette", "price" => 30, "quantity" => 10,"img" => "./img/trotinette.jpg", "tag" => array("loisir")),
 					"skateboard" => array("name" => "skateboard", "price" => 40, "quantity" => 10,"img" => "./img/skateboard.jpg", "tag" => array("loisir")),
 					"costume" => array("name" => "costume", "price" => 300, "quantity" => 10,"img" => "./img/costume.jpg", "tag" => array("vetements")),
-					"sac à dos" => array("name" => "sac à dos", "price" => 60, "quantity" => 10,"img" => "./img/sacados.jpg", "tag" => array("bagagerie")),
-					"sac à main" => array("name" => "sac à main", "price" => 90, "quantity" => 10,"img" => "./img/sacamain.jpg", "tag" => array("accessoires", "bagagerie")),
+					"sac_à_dos" => array("name" => "sac_à_dos", "price" => 60, "quantity" => 10,"img" => "./img/sacados.jpg", "tag" => array("bagagerie")),
+					"sac_à_main" => array("name" => "sac_à_main", "price" => 90, "quantity" => 10,"img" => "./img/sacamain.jpg", "tag" => array("accessoires", "bagagerie")),
 					"télévision" => array("name" => "télévision", "price" => 200, "quantity" => 10,"img" => "./img/television.jpg", "tag" => array("hitech")),
-					"chaine Hi-Fi" => array("name" => "chaine Hi-Fi", "price" => 80, "quantity" => 10,"img" => "./img/hifi.jpg", "tag" => array("hitech")),
+					"chaine_Hi-Fi" => array("name" => "chaine_Hi-Fi", "price" => 80, "quantity" => 10,"img" => "./img/hifi.jpg", "tag" => array("hitech")),
 					"montre" => array("name" => "montre", "price" => 50, "quantity" => 10,"img" => "./img/montre.jpg", "tag" => array("accessoires", "bijoux")));
 	// var_dump($shopinit);
 

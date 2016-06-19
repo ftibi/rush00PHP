@@ -14,8 +14,6 @@ if (!$_SESSION[logged_on_user])
 	$_SESSION[logged_on_user] = "default";
 	$_SESSION[def] =array("default" => array("login" => "default", "passwd" => hash("whirlpool", "moi"), "admin" => 0, "panier" => array()));
 }
-
-
 ?>
 <html>
 <head>
@@ -37,24 +35,3 @@ if (!$_SESSION[logged_on_user])
 </div>
 
 </html>
-
-<!--
-
-
-<div class="list_article">
-<div id="article_tshirt">
-<form action="add_article.php" method="POST" >
-<img id="tshirt" alt="tshiry" title="tshirt" src="img/tshirt.jpg">
-<input type="submit" name="article" value="tshirt">
-</form>
-
-<div id="article_tshirt">
-<form action="add_article.php" method="POST" >
-<img id="tshirt" alt="tshiry" title="tshirt" src="img/tshirt.jpg">
-<input type="submit" name="name" value="OK">
-</form>
-
-
-</div>
-
-</div> -->

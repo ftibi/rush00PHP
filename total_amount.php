@@ -8,10 +8,13 @@ function total_amount()
 	$user_file = unserializedb("./private/userdb");
 	if ($_SESSION[logged_on_user] !== "default")
 	{
+		if (is_array($user_file[$_SESSION[logged_on_user]][panier]))
+{
 		foreach($user_file[$_SESSION[logged_on_user]][panier] as $key => $value)
 		{
 			$cpt += $user_file[$_SESSION[logged_on_user]][panier][$key][price] * $user_file[$_SESSION[logged_on_user]][panier][$key][quantity];
 		}
+	}
 	}
 	else
 	{
