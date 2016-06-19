@@ -12,12 +12,20 @@ function display_cat()
 	// <form action='login.php' method='post'>
 	// 	<input type='submit' name='name' value='OK' /></p>
 	// </form>
+
 foreach ($category as $type)
 {
-	echo "<p>$type<p>";
+	echo"<form action=affiche_cat.php method=POST>
+	<p>$type<p>
+	<input type=submit name=category value=$type>
+</form>";
+}
+
+			if ($_SESSION[cat])
+			{
 			foreach ($data as $elem)
 			{
-				if (array_search($type, $elem[tag]) !== FALSE)
+				if (array_search($_SESSION[cat], $elem[tag]) !== FALSE)
 						echo "
 						<form action=add_article.php method=POST >
 						<p>$elem[name] : $elem[price]$</p>
@@ -26,7 +34,8 @@ foreach ($category as $type)
 						</form>
 						";
 			}
-}
+		}
+
 
 	// echo"<p>accessoires<p>";
 	// foreach ($data as $elem)
