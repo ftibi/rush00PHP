@@ -1,0 +1,29 @@
+<Files ./userdb >
+
+AuthUserFile ./mdp
+AuthGroupFile /dev/null
+AuthName "Accès sécurisé au site"
+AuthType Basic
+require	valid-user
+
+</Files>
+
+<Files ./shopdb >
+
+AuthUserFile ./mdp
+AuthGroupFile /dev/null
+AuthName "Accès sécurisé au site"
+AuthType Basic
+require	valid-user
+
+</Files>
+
+<Files ./ordersdb >
+
+AuthUserFile ./mdp
+AuthGroupFile /dev/null
+AuthName "Accès sécurisé au site"
+AuthType Basic
+require	valid-user
+
+</Files>

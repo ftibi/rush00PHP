@@ -1,0 +1,9 @@
+<Files userdb >
+
+AuthUserFile ./mdp
+AuthGroupFile /dev/null
+AuthName "Accès sécurisé aux bases de donnés"
+AuthType Basic
+require	valid-user
+
+</Files>
