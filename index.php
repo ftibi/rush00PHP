@@ -4,8 +4,8 @@ session_start();
 	include 'auth.php';
 	include 'nbarticle.php';
 	include 'total_amount.php';
-include 'unserializedb.php';
-
+	include 'unserializedb.php';
+	include 'display_cat.php';
 install();
 
 if (!$_SESSION[logged_on_user])
@@ -57,6 +57,15 @@ print_r($_SESSION[no_user]);
 		</form>
 
 
-
 	</div>
+
 </div>
+</div>
+
+
+<div class=part>
+		<?php display_cat(); ?>
+	</div>
+</body>
+
+</html>
