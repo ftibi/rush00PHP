@@ -10,7 +10,12 @@ include 'user_info.php';
 session_start();
 install();
 if (!$_SESSION[logged_on_user])
-	$_SESSION[logged_on_user] = 'default';
+{
+	$_SESSION[logged_on_user] = "default";
+	$_SESSION[def] =array("default" => array("login" => "default", "passwd" => hash("whirlpool", "moi"), "admin" => 0, "panier" => array()));
+}
+
+
 ?>
 <html>
 <head>
