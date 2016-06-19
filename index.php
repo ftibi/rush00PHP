@@ -1,11 +1,9 @@
 <?php
 
 include 'display_panier.php';
-
 include 'nbarticle.php';
 include 'total_amount.php';
 include 'unserializedb.php';
-
 include 'install.php';
 include 'auth.php';
 include 'display_cat.php';
@@ -19,8 +17,6 @@ if (!$_SESSION[logged_on_user])
 	$_SESSION[no_user] = array("login" => no_user, "admin" => 0, "panier" => array());
 
 ?>
-
-
 <html>
 <head>
 	<title>Awesome shop</title>

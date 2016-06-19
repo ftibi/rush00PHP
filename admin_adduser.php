@@ -1,5 +1,4 @@
 <?php
-
 function admin_adduser($login, $passwd)
 {
 	$filename = "./private/userdb";

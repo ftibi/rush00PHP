@@ -1,5 +1,4 @@
 <?php
-
 function admin_deluser($login)
 {
 	$filename = "./private/userdb";

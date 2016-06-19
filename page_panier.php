@@ -1,6 +1,5 @@
 <?php
 
-include 'get_usr_data.php';
 include 'del_article_panier.php';
 
 session_start();

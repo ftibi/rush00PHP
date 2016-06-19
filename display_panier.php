@@ -3,7 +3,7 @@
 function display_panier()
 {
 	echo"<div id=panier>
-		<h3>panier</h3>
+		<a href=page_panier.php ><h3>panier</h3></a>
 		<p>nb: ";
 		echo nbarticle();
 		echo"</p>

@@ -7,8 +7,6 @@ $filename = "./private/userdb";
 $data = file_get_contents($filename);
 $data = unserialize($data);
 
-// print_r($_POST);
-
 foreach ($_POST as $key => $value)
 {
 	if ($value == "del")
