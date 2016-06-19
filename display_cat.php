@@ -1,11 +1,12 @@
 <?php
-
+include 'return_array_cat.php';
 function display_cat()
 {
 	$filename = "./private/shopdb";
 	$data = file_get_contents($filename);
 	$data = unserialize($data);
-	$category = array("vetements", "accessoires", "bijoux");
+	// $category = array("vetements", "accessoires", "bijoux");
+	$category = return_array_cat();
 	// print_r($data);
 	echo "<h2>Boutique</h2>
 		<h3>category:</h3>";
