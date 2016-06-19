@@ -42,4 +42,8 @@ echo"</ul>";
 <input type=submit value=effacer />
 </form>
 
+<form action=commande.php method=post>
+	<input type=submit value='passer commande' />
+</form>
+
 </html>
