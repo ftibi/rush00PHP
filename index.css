@@ -28,6 +28,30 @@ img
 		width: 80px;		//tmp
 }
 
+#topleft
+{
+	float: left;
+}
+#topright
+{
+	float: right;
+}
+#center2
+{
+	margin-top: 10%;
+	margin-left:auto;
+	margin-right: auto;
+	text-align: center;
+	width: 25%;
+	clear: left;
+}
+#center1
+{
+	text-align: center;
+	margin: auto;
+	width: 25%;
+	clear: left;
+}
 /*.toppart
 {
   display: inline-block;

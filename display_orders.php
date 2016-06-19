@@ -17,14 +17,4 @@ function display_orders()
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
 ?>

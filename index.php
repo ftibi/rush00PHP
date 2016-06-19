@@ -32,10 +32,10 @@ if (!$_SESSION[logged_on_user])
 	</div>
 </div>
 
-<div class=part>
+<div id=center1 class=part>
 	<?php display_articles(); ?>
 </div>
-<div class=part>
+<div id=center2 class=part>
 	<?php display_cat(); ?>
 </div>
 </body>
