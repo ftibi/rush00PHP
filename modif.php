@@ -1,37 +1,28 @@
 <?php
 
+include 'get_usr_data.php';
 
 if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 {
-
-	if (!file_exists("../private"))
-		mkdir("../private", 0777, true);
-
-	$data_file = "";
-	$filename = "../private/userdb";
-	if (file_exists($filename))
-		$data_file = file_get_contents($filename, true);
-	else
-		$data_file = "";
-	$data_file = unserialize($data_file);
+	$data = get_usr_data();
 
 
-	if (!$data_file[$_POST['login']] || $data_file[$_POST['login']]['passwd'] !== hash("whirlpool",$_POST['oldpw']))
+	if (!$data[$_POST['login']] || $data[$_POST['login']]['passwd'] !== hash("whirlpool",$_POST['oldpw']))
 	{
-			echo ("ERROR1\n");
+			echo ("ERROR\n");
 			exit();
 	}
 	else
 	{
-		header('Location:./index.html');
+		header('Location:./index.php');
 		echo ("OK\n");
-		$data_file[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['newpw']));
-		$data_file = serialize($data_file);
-		file_put_contents($filename, $data_file);
+		$data[$_POST['login']] = array("login" => $_POST['login'], "passwd" => hash("whirlpool", $_POST['newpw']));
+		$data = serialize($data);
+		file_put_contents($filename, $data);
 	}
 
 }
 else
-	echo ("ERROR2\n");
+	echo ("ERROR : Tous les champs n'ont pas été renseignés\n");
 exit();
 ?>
