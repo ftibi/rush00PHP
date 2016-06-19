@@ -9,25 +9,23 @@ function total_amount()
 	if ($_SESSION[logged_on_user] !== "default")
 	{
 		if (is_array($user_file[$_SESSION[logged_on_user]][panier]))
-{
-		foreach($user_file[$_SESSION[logged_on_user]][panier] as $key => $value)
 		{
-			$cpt += $user_file[$_SESSION[logged_on_user]][panier][$key][price] * $user_file[$_SESSION[logged_on_user]][panier][$key][quantity];
+			foreach($user_file[$_SESSION[logged_on_user]][panier] as $key => $value)
+			{
+				$cpt += $user_file[$_SESSION[logged_on_user]][panier][$key][price] * $user_file[$_SESSION[logged_on_user]][panier][$key][quantity];
+			}
 		}
-	}
 	}
 	else
 	{
 		if (is_array($_SESSION[def][panier]))
 		{
-		foreach($_SESSION[def][panier] as $key => $value)
-		{
-			$cpt += $_SESSION[def][panier][$key][price] * $_SESSION[def][panier][$key][quantity];
-		}
+			foreach($_SESSION[def][panier] as $key => $value)
+			{
+				$cpt += $_SESSION[def][panier][$key][price] * $_SESSION[def][panier][$key][quantity];
+			}
 		}
 	}
 	return $cpt;
-
 }
-
 ?>
