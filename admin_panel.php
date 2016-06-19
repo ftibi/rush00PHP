@@ -50,12 +50,13 @@ if ($_POST[name] && $_POST[price] && $_POST[img] && $_POST[tag])
 <html>
 <header>
 	<title>Admin</title>
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="admin.css">
 	<meta charset="UTF-8">
 </header>
 
 <h2>Panneau d'Administration</h2>
-<a href=index.php>Retour à la page principale</a>
+<p><a href=index.php>Retour à la page principale</a></p>
+<div>
 <h3> Effacer utilisateurs </h3>
 <form action=admin_panel.php method=post>
 	<ul>
@@ -66,16 +67,19 @@ if ($_POST[name] && $_POST[price] && $_POST[img] && $_POST[tag])
 	</ul>
 <input type=submit name=del_array value=effacer />
 </form>
+</div>
 
 
+<div>
 <h3> Ajout d'utilisateur </h3>
 <form action=admin_panel.php method=post>
 	<p>Login: <input type="text" name="login"><br /></p>
 	<p>Mot de passe:<input type="text" name="passwd"><br /></p>
 <input type=submit name=submit value=ajouter />
 </form>
+</div>
 
-
+<div>
 <h3> Effacer un Article </h3>
 <form action=admin_panel.php method=post>
 	<ul>
@@ -87,7 +91,9 @@ foreach ($shopdata as $item)
 	</ul>
 <input type=submit name=del_array value=effacer />
 </form>
+</div>
 
+<div>
 <h3> Ajouter un Article </h3>
 <form action=admin_panel.php method=post>
 	<p>Nom: <input type="text" name="name"></p>
@@ -96,9 +102,12 @@ foreach ($shopdata as $item)
 	<p>Tags:<input type="text" name="tag"></p>
 <input type=submit name=submit value=ajouter />
 </form>
+</div>
 
+<div>
 <h3>Commandes passées</h3>
 <?php display_orders(); ?>
+</div>
 
 
 </html>

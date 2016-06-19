@@ -12,6 +12,7 @@ function display_panier()
 	{
 		echo"<div id=panier>
 			<h3>panier</h3>
+			<p><a href='login.html'>Connectez  vous pour accéder à votre panier</a></p>
 			<p>nb: ";
 	}
 		echo nbarticle();

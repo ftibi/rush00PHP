@@ -25,7 +25,7 @@ $total_amount = total_amount();
 <html>
 <header>
 	<title>Commande</title>
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="commande.css">
 	<meta charset="UTF-8">
 </header>
 <a href=index.php>Retour à la page principale</a>
@@ -33,17 +33,18 @@ $total_amount = total_amount();
 if ($panier)
 {
 	echo"<h1>Votre commande a bien été passée</h1>";
+	echo"<div>";
+	echo"<h2>Récapitulatif</h2>";
 	foreach ($panier as $item)
 	{
-		echo "<h2>$item[name] : $item[quantity] : $item[price]$</h2>";
-		echo "Montant total de votre commande:$total_amount";
+		echo "<p>$item[name] : $item[quantity] : $item[price]$</p>";
 		//reste a ajouter la commande sur la db commande et reset le panier
 		$data[$_SESSION[logged_on_user]][panier] = array();
 		put_usr_data($data);
 		pass_order($_SESSION[logged_on_user], $panier);
-
-
 	}
+	echo "<h2>Montant total de votre commande:$total_amount$</h2>";
+	echo"</div>";
 }
 else
 	echo"<h1>Votre panier est vide</h1>";
