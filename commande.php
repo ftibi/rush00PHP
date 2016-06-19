@@ -1,7 +1,20 @@
 <?php
 
 include 'get_usr_data.php';
+include 'put_usr_data.php';
 include 'total_amount.php';
+
+function pass_order($login, $panier)
+{
+	$filename = "./private/ordersdb";
+
+	$data = file_get_contents($filename);
+	$data = unserialize($data);
+	$panier[login] = $login;
+	$data[$login] = $panier;
+	$data = serialize($data);
+	file_put_contents($filename, $data);
+}
 
 session_start();
 $data = get_usr_data();
@@ -25,6 +38,10 @@ if ($panier)
 		echo "<h2>$item[name] : $item[quantity] : $item[price]$</h2>";
 		echo "Montant total de votre commande:$total_amount";
 		//reste a ajouter la commande sur la db commande et reset le panier
+		$data[$_SESSION[logged_on_user]][panier] = array();
+		put_usr_data($data);
+		pass_order($_SESSION[logged_on_user], $panier);
+
 
 	}
 }

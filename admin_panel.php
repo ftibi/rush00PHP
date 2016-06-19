@@ -2,6 +2,7 @@
 
 include 'admin_deluser.php';
 include 'admin_adduser.php';
+include 'display_orders.php';
 
 $filename = "./private/userdb";
 $data = file_get_contents($filename);
@@ -52,6 +53,8 @@ if ($_POST[login] && $_POST[passwd])
 <input type=submit name=submit value=ajouter />
 </form>
 
+<h3>Commandes passées</h3>
+<?php display_orders(); ?>
 
 
 </html>
