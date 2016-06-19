@@ -10,8 +10,8 @@ include 'user_info.php';
 session_start();
 install();
 if (!$_SESSION[logged_on_user])
-	$_SESSION[no_user] = array("login" => no_user, "admin" => 0, "panier" => array());
-
+	$_SESSION[logged_on_user] = "default";
+	print_r($_SESSION[logged_on_user]);
 ?>
 <html>
 <head>
