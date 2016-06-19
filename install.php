@@ -28,7 +28,7 @@ function install()
 					"costume" => array("name" => "costume", "price" => 10, "quantity" => 10,"img" => "./img/costume.jpg", "tag" => array("vetements")),
 					"sac à dos" => array("name" => "sac à dos", "price" => 10, "quantity" => 10,"img" => "./img/sacados.jpg", "tag" => array("bagagerie")),
 					"sac à main" => array("name" => "sac à main", "price" => 10, "quantity" => 10,"img" => "./img/sacamain.jpg", "tag" => array("accessoires", "bagagerie")),
-					"télévision" => array("name" => "télévision", "price" => 10, "quantity" => 10,"img" => "./img/télévision.jpg", "tag" => array("hitech")),
+					"télévision" => array("name" => "télévision", "price" => 10, "quantity" => 10,"img" => "./img/television.jpg", "tag" => array("hitech")),
 					"chaine Hi-Fi" => array("name" => "chaine Hi-Fi", "price" => 10, "quantity" => 10,"img" => "./img/hifi.jpg", "tag" => array("hitech")),
 					"montre" => array("name" => "montre", "price" => 50, "quantity" => 10,"img" => "./img/montre.jpg", "tag" => array("accessoires", "bijoux")));
 	// var_dump($shopinit);
