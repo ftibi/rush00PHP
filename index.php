@@ -21,17 +21,22 @@ if (!$_SESSION[logged_on_user])
 	<link rel="stylesheet" href="index.css">
 	<meta charset="UTF-8">
 </head>
-<div class=part>
-	<?php user_info(); ?>
+<body>
+
+<div class=top2>
+	<div class=part id=topleft>
+		<?php user_info(); ?>
+	</div>
+	<div class=part id=topright>
+		<?php display_panier(); ?>
+	</div>
 </div>
-<div class=part>
-	<?php display_panier(); ?>
-</div>
+
 <div class=part>
 	<?php display_articles(); ?>
 </div>
 <div class=part>
 	<?php display_cat(); ?>
 </div>
-
+</body>
 </html>
