@@ -1,6 +1,9 @@
 <?php
 include 'get_usr_data.php';
 
+session_start();
+if ($_SESSION['logged_on_user'] === "default")
+	header('location: index.php');
 if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'])
 {
 	$data = get_usr_data();
